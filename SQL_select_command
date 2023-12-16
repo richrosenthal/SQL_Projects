@@ -1,0 +1,4 @@
+-- This command will search the employee table and pull from the columns first and last name to search for Mayumi Schueller
+
+SELECT * FROM employees
+WHERE first_name='Mayumi'AND last_name='Schueller';
