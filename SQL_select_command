@@ -19,3 +19,7 @@ SELECT state, gender FROM customers
 
 -- Filters the data to include only female customers ('F') from either Oregon ('OR') or New York ('NY')
 WHERE (state = 'OR' AND gender = 'F') OR (state = 'NY' AND gender = 'F')
+
+-- Counts the number of customers who are not male
+SELECT count(firstname) FROM customers
+WHERE NOT gender = 'm';
