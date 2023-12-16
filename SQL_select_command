@@ -2,3 +2,13 @@
 
 SELECT * FROM employees
 WHERE first_name='Mayumi'AND last_name='Schueller';
+
+
+
+
+-- Selects the first name, last name, and hire date columns from the employees table
+SELECT first_name, last_name, hire_date FROM employees
+-- Filters the data to include employees named Georgi Facello with a hire date of 1986-06-26
+WHERE first_name = 'Georgi' AND last_name= 'Facello' AND hire_date = '1986-06-26'
+-- Additionally includes employees named Bezalel Simmel regardless of hire date
+OR first_name = 'Bezalel' AND last_name = 'Simmel'
