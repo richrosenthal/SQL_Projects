@@ -36,3 +36,11 @@ WHERE district IN ('Zuid-Holland', 'Noord-Brabant', 'Utrecht');
 
 -- Displays the current time zone setting of the database server
 SHOW TIMEZONE;
+
+-- Selects all columns from the employees table
+SELECT * FROM employees
+-- Filters for employees who are 60 years or older
+WHERE birthdate <= now() - INTERVAL '60 years'
+-- And ensures that these employees were hired in the month of February
+AND EXTRACT(MONTH FROM hire_date) = 2;
+
