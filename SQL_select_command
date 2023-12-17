@@ -23,3 +23,13 @@ WHERE (state = 'OR' AND gender = 'F') OR (state = 'NY' AND gender = 'F')
 -- Counts the number of customers who are not male
 SELECT count(firstname) FROM customers
 WHERE NOT gender = 'm';
+
+
+-- Selects all fields from the orders table for customers with specified customer IDs
+SELECT * FROM orders
+WHERE customerid IN (7888, 1082, 12808, 9623);
+
+-- Counts the number of city IDs in specific districts
+SELECT COUNT(id)
+FROM city
+WHERE district IN ('Zuid-Holland', 'Noord-Brabant', 'Utrecht');
