@@ -44,3 +44,21 @@ WHERE birthdate <= now() - INTERVAL '60 years'
 -- And ensures that these employees were hired in the month of February
 AND EXTRACT(MONTH FROM hire_date) = 2;
 
+/*
+Create a new table called customers_nmyc that pulls all rows from the customers tables where the customer lives in Nyew York city in the staty
+of New York*/
+CREATE TABLE customers_nyc AS (
+SELECT * FROM customers
+WHERE city='New York City');
+
+/*
+Delete from the new table all cusotmers in postal code 10014 Due to locals laws they will not eligibles for marketing*/
+DELETE from customers_nyc
+WHERE postal_code = '10014';
+/*
+Add a new text cloumn called event*/
+ALTER TABLE customers_nyc
+ADD COLUMN events text; 
+/*Set the value of the event to thank-you party */
+UPDATE customers_nyc
+SET events = 'thank you party';
